@@ -38,4 +38,4 @@ A simple Python&amp;Java toolkit for text extraction, cleaning and statistics.
 - [ ] 事件抽取
 
 # 函数格式
-![image](https://github.com/lexsaints/powershell/blob/master/IMG/ps2.png)
+![image](https://github.com/sharejing/Takin/blob/main/image/required_function_format.png)
