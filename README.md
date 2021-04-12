@@ -9,6 +9,7 @@ A simple Python&amp;Java toolkit for text extraction, cleaning and statistics.
 ### 文本清洗
 - 转化类
 - [x] 大小写转化
+- [x] 首字母大写
 - [ ] 简繁体转化
 - [ ] 全半角转化
 - [ ] 词干还原
@@ -16,9 +17,9 @@ A simple Python&amp;Java toolkit for text extraction, cleaning and statistics.
 - [ ] 单词拼写纠错
 - 删除类
 - [ ] 删除所有空白行
-- [ ] 删除多余空白格
-- [ ] 删除所有转义字符
-- [ ] 删除所有数字
+- [x] 删除多余空白格
+- [x] 删除所有转义字符
+- [x] 删除所有数字
 - [ ] 删除所有括号([]、{}、())及里面的内容
 - [ ] 删除停用词
 - 处理类
