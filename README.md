@@ -36,3 +36,6 @@ A simple Python&amp;Java toolkit for text extraction, cleaning and statistics.
 - [ ] 命名实体识别
 - [ ] 摘要生成
 - [ ] 事件抽取
+
+# 函数格式
+![image](https://github.com/lexsaints/powershell/blob/master/IMG/ps2.png)
