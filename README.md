@@ -8,8 +8,8 @@ A simple Python&amp;Java toolkit for text extraction, cleaning and statistics.
 
 ### 文本清洗
 - 转化类
-- [ ] 大小写转化
-- [x] 简繁体转化
+- [x] 大小写转化
+- [ ] 简繁体转化
 - [ ] 全半角转化
 - [ ] 词干还原
 - [ ] 文本去重
