@@ -21,7 +21,7 @@ A simple Python&amp;Java toolkit for text extraction, cleaning and statistics.
 - [x] 删除所有转义字符
 - [x] 删除所有数字
 - [x] 删除所有括号([]、{}、())及里面的内容
-- [ ] 删除停用词
+- [x] 删除序号数字 (1.或(1).)
 - 处理类
 - [ ] 分句/分段
 - [ ] 词频统计(词云)
