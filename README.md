@@ -16,7 +16,7 @@ A simple Python&amp;Java toolkit for text extraction, cleaning and statistics.
 - [ ] 文本去重
 - [ ] 单词拼写纠错
 - 删除类
-- [ ] 删除所有标点符号
+- [x] 删除所有标点符号
 - [x] 删除多余空白格
 - [x] 删除所有转义字符
 - [x] 删除所有数字
