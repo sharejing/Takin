@@ -73,7 +73,7 @@ def delete_bracket(text: str) -> str:
     return text
 
 
-def delete_number(text: str) -> str:
+def delete_serial_number(text: str) -> str:
     """
     Delete all serial numbers in text.
     Including *.、(*).、*).
