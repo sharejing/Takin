@@ -5,22 +5,27 @@ A simple Python&Java toolkit for text extraction, cleaning and statistics.
 ```python
 import takin
 
-
+# 删除转义字符
 test3 = "tbubs\t nkkj\rndsnd  sjdsn  \t\t \r \t\f\n"
 print(takin.delete_escape_character(test3))
 
+# 删除多余的空格
 test4 = "I lovw        python   d     "
 print(takin.delete_extra_whitespace(test4))
 
+# 删除数字
 test5 = "jjj 555 5  555   jkdn33 78 0 6 7"
 print(takin.delete_digit(test5)) 
 
+# 删除标点符号
 test6 = "hh.,?？。，《hshhh》dddi;';'；‘，。、’‘“”"
 print(takin.delete_punctuation(test6))
 
+# 删除括号及括号里的内容
 test7 = "dd<dd>d[e]dd【33445可爱】dd{众多}（就就很尴尬）jjj(尅啊)"
 print(takin.delete_bracket(test7))
 
+# 删除序号
 test8 = "1. 亨 2.hhjsidh (66).jasckjs   2.34    (9999).周驰你上课 1).2)."
 print(takin.delete_extra_whitespace(takin.delete_series_number(test8)))
 
