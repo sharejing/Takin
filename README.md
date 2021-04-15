@@ -70,6 +70,3 @@ print(takin.delete_extra_whitespace(takin.delete_series_number(test8)))
 - [ ] 命名实体识别
 - [ ] 摘要生成
 - [ ] 事件抽取
-
-# 函数格式
-![image](https://github.com/sharejing/Takin/blob/main/image/required_function_format.png)
