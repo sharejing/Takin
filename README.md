@@ -1,5 +1,30 @@
 # Takin
-A simple Python&amp;Java toolkit for text extraction, cleaning and statistics.
+A simple Python&Java toolkit for text extraction, cleaning and statistics.
+
+# Usage
+'''python
+import takin
+
+
+test3 = "tbubs\t nkkj\rndsnd  sjdsn  \t\t \r \t\f\n"
+print(takin.delete_escape_character(test3))
+
+test4 = "I lovw        python   d     "
+print(takin.delete_extra_whitespace(test4))
+
+test5 = "jjj 555 5  555   jkdn33 78 0 6 7"
+print(takin.delete_digit(test5)) 
+
+test6 = "hh.,?？。，《hshhh》dddi;';'；‘，。、’‘“”"
+print(takin.delete_punctuation(test6))
+
+test7 = "dd<dd>d[e]dd【33445可爱】dd{众多}（就就很尴尬）jjj(尅啊)"
+print(takin.delete_bracket(test7))
+
+test8 = "1. 亨 2.hhjsidh (66).jasckjs   2.34    (9999).周驰你上课 1).2)."
+print(takin.delete_extra_whitespace(takin.delete_series_number(test8)))
+
+'''
 
 # To-do list
 ### 文本抽取
@@ -23,6 +48,8 @@ A simple Python&amp;Java toolkit for text extraction, cleaning and statistics.
 - [x] 删除所有括号([]、{}、())及里面的内容
 - [x] 删除序号数字 (1.或(1).)
 - [x] 删除一些特殊字符 (-~#/*&$|★▶><\\^@)
+- [x] 删除中文文本里的英文字符
+- [x] 删除英文文本里的中文字符 
 - 处理类
 - [ ] 分句/分段
 - [ ] 词频统计(词云)
