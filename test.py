@@ -38,3 +38,8 @@ print(takin.delete_bracket(test7))
 test8 = "1. 亨 2.hhjsidh (66).jasckjs   2.34    (9999).周星驰你上课 1).2)."
 print(takin.delete_extra_whitespace(takin.delete_series_number(test8)))
 
+corpus = ["A"] * 766
+train_dataset, test_dataset = takin.split_dataset(corpus, ratio="8:2")
+print(len(train_dataset))
+print(len(test_dataset))
+
