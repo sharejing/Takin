@@ -1,4 +1,4 @@
-<div align="center"><img src="https://github.com/sharejing/Takin/blob/main/images/takin_logo.PNG" height="200px"/></div>
+<div align="center"><img src="https://github.com/sharejing/Takin/blob/main/images/takin_logo.PNG" height="180px"/></div>
 
 <h2 align="center">Takin: A Simple Python Toolkit for Text Extraction, Cleaning and Statistics</h2>
 
