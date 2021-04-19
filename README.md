@@ -16,6 +16,7 @@
 
 <h2 align="center">Usage Examples</h2>
 <h3>1. 数据清洗 (Data cleaning)</h3>
+
 ```python
 import takin
 
@@ -83,6 +84,3 @@ print(takin.delete_extra_whitespace(takin.delete_series_number(test8)))
 - [ ] 命名实体识别
 - [ ] 摘要生成
 - [ ] 事件抽取
-
-<b>目前Takin整体还处理初期开发阶段，才疏学浅，若有错误和不当之处，请批评与指正！</b>
-Email: yymmjing@gmail.com
