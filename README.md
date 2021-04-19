@@ -1,5 +1,8 @@
-# Takin
-A simple Python&Java toolkit for text extraction, cleaning and statistics.
+<div align="center"><img src="https://github.com/sharejing/Takin/blob/main/images/takin-logo.PNG" height="100px"/></div>
+
+<h2 align="center">Takin: A Simple Python Toolkit for Text Extraction, Cleaning and Statistics.</h2>
+
+
 
 # Usage
 ```python
