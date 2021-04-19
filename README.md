@@ -63,8 +63,8 @@ print(takin.delete_extra_whitespace(takin.delete_series_number(test8)))
 - [x] 删除英文文本里的中文字符
 
 ### 数据处理 (Data Processing)
-- [ ] 分词、词性标注
-- [ ] 数据划分
+- [x] 分词、词性标注
+- [x] 数据划分
 - [ ] 词向量转化
 - [ ] BPE
 
