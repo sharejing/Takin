@@ -4,7 +4,7 @@
 
 实验室数据大多由人工众包构建而成，其格式规范，内容干净，数据经过一些简单清洗便能用于模型训练；而真实环境下的数据往往来自于一些用户日志、员工记录等，其文件格式众多，数据内容包含大量噪声，想要获得内容干净、格式规范统一的数据，就需要对这些数据进行深度清洗。Takin就是一款用于真实环境下数据的解析、深度清洗、统计的Python工具，它集成了一些优秀的开源插件（如spacy、jieba），通过对外提供函数接口的方式，来帮助使用者解析数据、清洗数据、统计数据等。
 
-<h2>Takin的目标是：对于任何形式、任何内容的数据，通过Takin就能完全得到你所期望的最规范、最干净的数据。</h2>
+<b>Takin的目标是：对于任何形式、任何内容的数据，通过Takin就能完全得到你所期望的最规范、最干净的数据。</b>
 
 为了接近并最终达到这个目标，Takin包含以下功能：
 * 文本解析：从多种文件格式 (如pdf、pptx、msg、html等)中解析文本；
@@ -14,13 +14,10 @@
 * 数据增强：提供一些简单的数据增强方法，如近义词替换、随机交换、删除单词、释义生成；
 * 简单任务：提供一些简单的NLP任务，如关键词抽取、色情文本判断、命名实体识别，情感分析等。
 
-# Usage
+<h2 align="center">Usage Examples</h2>
+<h3>1. 数据清洗 (Data cleaning)</h3>
 ```python
 import takin
-
-# 删除转义字符
-test3 = "tbubs\t nkkj\rndsnd  sjdsn  \t\t \r \t\f\n"
-print(takin.delete_escape_character(test3))
 
 # 删除多余的空格
 test4 = "I lovw        python   d     "
@@ -30,10 +27,6 @@ print(takin.delete_extra_whitespace(test4))
 test5 = "jjj 555 5  555   jkdn33 78 0 6 7"
 print(takin.delete_digit(test5)) 
 
-# 删除标点符号
-test6 = "hh.,?？。，《hshhh》dddi;';'；‘，。、’‘“”"
-print(takin.delete_punctuation(test6))
-
 # 删除括号及括号里的内容
 test7 = "dd<dd>d[e]dd【33445可爱】dd{众多}（就就很尴尬）jjj(尅啊)"
 print(takin.delete_bracket(test7))
@@ -41,7 +34,6 @@ print(takin.delete_bracket(test7))
 # 删除序号
 test8 = "1. 亨 2.hhjsidh (66).jasckjs   2.34    (9999).周驰你上课 1).2)."
 print(takin.delete_extra_whitespace(takin.delete_series_number(test8)))
-
 ```
 
 # To-do list
@@ -91,3 +83,6 @@ print(takin.delete_extra_whitespace(takin.delete_series_number(test8)))
 - [ ] 命名实体识别
 - [ ] 摘要生成
 - [ ] 事件抽取
+
+<b>目前Takin整体还处理初期开发阶段，才疏学浅，若有错误和不当之处，请批评与指正！</b>
+Email: yymmjing@gmail.com
