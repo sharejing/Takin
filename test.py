@@ -38,3 +38,9 @@ print(takin.delete_bracket(test7))
 test8 = "1. 亨 2.hhjsidh (66).jasckjs   2.34    (9999).周星驰你上课 1).2)."
 print(takin.delete_extra_whitespace(takin.delete_series_number(test8)))
 
+test9 = "I am looking for a restaurant that is moderately priced and serves Cantonese food."
+print(takin.synonym_substitution(test9))
+
+test10 = "I am looking for a restaurant that is moderately priced and serves Cantonese food."
+print(takin.drop_stopwords(test10))
+

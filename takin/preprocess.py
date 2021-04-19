@@ -8,6 +8,10 @@
 '''
 
 import re
+import nltk
+from nltk.corpus import wordnet, stopwords
+from nltk.tokenize import word_tokenize
+import random
 
 
 def lowercase(text: str) -> str:
@@ -98,3 +102,58 @@ def delete_series_number(text: str) -> str:
     text = re.sub(r"\d+\)", "", text)
     text = re.sub(r"\d+\)、", "", text)
     return text
+
+
+def synonym_substitution(text: str) -> str:
+    """
+    Synonym substitution for the input text for data argumentation.
+    """
+    # 1. 先对text进行分词
+    words = nltk.word_tokenize(text)
+
+    # 2. 对text进行词性标注
+    words_tag = nltk.pos_tag(words)
+
+    replaced_text = []
+
+    # 3. 同义词替换
+    for i in range(0, len(words)):
+
+        replacements = []
+
+        for syn in wordnet.synsets(words[i]):
+
+            # Do not attempt to replace proper nouns or determiners
+            if words_tag[i][1] == "NNP" or words_tag[i][1] == "DT" or words_tag[i][1] == "PRP" or words_tag[i][1] == "MD":
+                continue
+
+            word_type = words_tag[i][1][0]
+
+            if syn.name().find("." + word_type + "."):
+                r = syn.name()[0:syn.name().find(".")]
+                replacements.append(r)
+
+        if len(replacements) > 0:
+            # Choose a random replacement
+            replacement = replacements[random.randint(0, len(replacements)-1)]
+            replaced_text.append(replacement)
+        else:
+            replaced_text.append(words[i])
+
+    return " ".join(replaced_text)
+
+
+
+def drop_stopwords(text: str) -> str:
+    """
+    drop the stopwords in the text for data argumentation.
+    """
+    stop_words = set(stopwords.words("english"))  # stopwords vocabulary
+    word_tokens = word_tokenize(text) 
+    filtered_sentence = []
+    for w in word_tokens:
+        if w not in stop_words:
+            filtered_sentence.append(w)
+    return " ".join(filtered_sentence)
+
+    
