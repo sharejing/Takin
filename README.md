@@ -63,8 +63,8 @@ print(takin.delete_extra_whitespace(takin.delete_series_number(test8)))
 - [x] 删除英文文本里的中文字符
 
 ### 数据处理 (Data Processing)
-- [ ] 分词、词性标注
-- [ ] 数据划分
+- [x] 分词、词性标注
+- [x] 数据划分
 - [ ] 词向量转化
 - [ ] BPE
 
@@ -80,7 +80,7 @@ print(takin.delete_extra_whitespace(takin.delete_series_number(test8)))
 ### 简单任务
 - [ ] 色情文本判断、识别
 - [ ] 情感分析
-- [ ] 关键词提取
+- [x] 关键词提取（基于tf-idf的无监督关键词抽取）
 - [ ] 命名实体识别
 - [ ] 摘要生成
 - [ ] 事件抽取
