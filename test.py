@@ -55,3 +55,15 @@ golden_truth = ["定量测量", "能量强度", "社会工程"]
 print(takin.extraction_with_tfidf(idf, tokenized_sent, topk=5))
 
 
+# data argumentation 测试用例
+case1 = "我们就像蒲公英，我也祈祷着能和你飞去同一片土地"
+# case2 = "I am looking for a restaurant that is moderately priced and serves Cantonese food ."
+case1_words = takin.tokenize(case1, lang="zh")
+# case2_words = takin.tokenize(case2, lang="en")
+p = 0.3
+n = max(1, int(p*len(case1_words)))
+print(takin.synonym_replacement(case1_words, n, lang="zh"))  # 同义词替换
+print(takin.random_insertion(case1_words, n, lang="zh"))  # 随机插入
+print(takin.random_swap(case1_words, n))  # 随机交换
+print(takin.random_deletion(case1_words, 0.3))  # 随机删除
+print(takin.drop_stopwords(case1_words))  # 随机删除
