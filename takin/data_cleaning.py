@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 '''
-@File   :   preprocess.py
+@File   :   data_cleaning.py
 @Time   :   2021/04/12 18:28:06
 @Author :   ShareJing
 @Email  :   yymmjing@gmail.com
-@Desc   :   The function set of text preprocess.
+@Desc   :   The function set of data cleaning.
 '''
 
 import re
@@ -24,18 +24,26 @@ def capitalize(text: str) -> str:
     return text.capitalize()
 
 
-def delete_escape_character(text: str) -> str:
+def delete_escape_character(text: str, lang="en") -> str:
     """
-    Delete all escape characters (\r|\n|\t|\f|\v) of text.
+    Delete all escape characters (\r|\n|\t) of text.
     """
-    return re.sub(r"[\r\n\t\f\v]", " ", text)
+    text = re.sub(r"[\t\v\f\r]", "", text)
+    if lang == "zh":
+        text = re.sub(r"[\n]", "。", text)
+    else:
+        text = re.sub(r"[\n]", ".", text)
+    return text
 
 
-def delete_extra_whitespace(text: str) -> str:
+def delete_extra_whitespace(text: str, lang="en") -> str:
     """
     Delete any extra white spaces of text.
     """
-    return " ".join(text.split())
+    if lang == "zh":
+        return "".join(text.split())
+    else:
+        return " ".join(text.split())
 
 
 def delete_digit(text: str) -> str:
@@ -93,8 +101,22 @@ def delete_series_number(text: str) -> str:
     Including *.、(*).、*).
     """
     text = re.sub(r"\d+\.[^\d+]", "", text)
+    text = re.sub(r"\d+\。", "", text)
     text = re.sub(r"\(\d+\).", "", text)
     text = re.sub(r"\d+\).", "", text)
     text = re.sub(r"\d+\)", "", text)
     text = re.sub(r"\d+\)、", "", text)
     return text
+
+
+def replace_consequent_punc(text, lang="en"):
+    """
+    连续标点符号用句号替换
+    """
+    if lang == "zh":
+        text = re.sub(r"[？?.。,，；;、]+", "。", text)
+    else:
+        text = re.sub(r"[？?.。,，。；;、]+", ". ", text)
+    return text
+
+
