@@ -18,8 +18,8 @@
 <h3>1. 直接使用源码 (推荐方式)</h3>
 
 ```bash
-git clone https://github.com/sharejing/takin.git
-cd takin
+git clone https://github.com/sharejing/Takin.git
+cd Takin
 sh setup.sh
 ```
 
