@@ -40,21 +40,21 @@ pip install takin
 import takin
 
 # 删除多余的空格
->>> en_text_1 = "I      love  python!"
->>> zh_text_1 = "今天    天气  颇为   凉爽  呀 ！"
->>> print(takin.delete_extra_whitespace(en_text_1, lang="en"))
->>> print(takin.delete_extra_whitespace(zh_text_1, lang="zh"))
+>>> en_text1 = "I      love  python!"
+>>> zh_text1 = "今天    天气  颇为   凉爽  呀 ！"
+>>> print(takin.delete_extra_whitespace(en_text1, lang="en"))
+>>> print(takin.delete_extra_whitespace(zh_text1, lang="zh"))
 I love python!
 今天天气颇为凉爽呀！
 
 # 删除括号及括号里的内容
->>> text_2 = "我们(很高兴)，他们【很快乐】，大家{都很不错哦 }，所以（今天）一起去玩吧"
->>> print(takin.delete_bracket(text_2))
+>>> text2 = "我们(很高兴)，他们【很快乐】，大家{都很不错哦 }，所以（今天）一起去玩吧"
+>>> print(takin.delete_bracket(text2))
 我们，他们，大家，所以一起去玩吧
 
 # 删除序号
->>> test_3 = "1. 内存 25.Main board (66).磁盘(9999).显卡 1).M集群2).显示器"
->>> print(takin.delete_series_number(test_3))
+>>> test3 = "1. 内存 25.Main board (66).磁盘(9999).显卡 1).M集群2).显示器"
+>>> print(takin.delete_series_number(test3))
  内存 Main board 磁盘显卡 M集群显示器
 ```
 
@@ -80,6 +80,21 @@ import takin
 537
 154
 75
+```
+
+<h3>3. 简单任务 (NLP Tasks)</h3>
+
+```python
+import takin
+
+# 基于tf-idf的无监督关键词抽取
+>>> corpus = [["w1", "w2", ...], ["w1", "w2", ...], ...]  # 自己准备
+>>> idf = takin.get_idf(corpus)
+>>> test5 = "社会工程的基础是定量测量.定量测量技术的要点包括测量原理、测量对象、测量公式、测量单位、测量频率等.测量对象一是社会成员,二是社会活动.测量原理是通过测算凝聚在人际交往中的社会能量(测量单位),在数量层面定义社会成员和社会活动的社会作用,从而形成了测量两者的具体公式.测量单位包括直接能量和间接能量的区别.测量技术在社会工程中有广泛的应用,可应用于高能控制工程、低能控制工程和定向控制工程."
+>>> tokenized_test5 = takin.tokenize(test5, lang="zh", drop_stopwords=True)
+>>> golden_truth = ["定量测量", "能量强度", "社会工程"]
+>>> print(takin.extraction_with_tfidf(idf, tokenized_test5, topk=5))
+[('控制工程', 28.826495997846088), ('测量', 22.65360513253593), ('社会活动', 22.303221799004074), ('单位', 19.404087649523138), ('成员', 16.300763937635697)]
 ```
 
 # To-do list
