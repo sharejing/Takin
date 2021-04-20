@@ -17,7 +17,7 @@ random.seed(2021)
 
 
 #停用词列表
-f = open('stopwords/stopwords.txt', encoding="utf-8")
+f = open('resources/stopwords.txt', encoding="utf-8")
 stop_words = list()
 for stop_word in f.readlines():
     stop_words.append(stop_word[:-1])
