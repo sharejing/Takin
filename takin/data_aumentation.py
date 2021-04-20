@@ -21,6 +21,7 @@ f = open('stopwords/stopwords.txt', encoding="utf-8")
 stop_words = list()
 for stop_word in f.readlines():
     stop_words.append(stop_word[:-1])
+f.close()
 
 
 ########################################################################
