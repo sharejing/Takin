@@ -12,7 +12,7 @@ import jieba.posseg as pseg
 import spacy
 import logging
 import random
-
+import math
 
 jieba.setLogLevel(logging.INFO)
 
