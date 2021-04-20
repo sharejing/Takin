@@ -14,6 +14,16 @@
 * 数据增强：提供一些简单的数据增强方法，如近义词替换、随机交换、删除单词、释义生成；
 * 简单任务：提供一些简单的NLP任务，如关键词抽取、色情文本判断、命名实体识别，情感分析等。
 
+<h2 align="center">Installation</h2>
+<h3>1. 直接使用源码 (推荐方式)</h3>
+> 我们推荐直接使用源码来安装Takin，即将stopwords和takin文件夹放入您的project下即可。之所以推荐这种方式的目的是：不同数据一般预处理方式存在差异，直接使用源码可以帮助您根据您的实际情况来修改Takin中的函数，以达到自己的预处理结果。另外，如果您的函数具有很强的代表性，也请您可以pull request，便于大家查阅、使用。
+
+<h3>2. 通过pip安装</h3>
+'''bash
+pip install takin
+'''
+> 目前Takin整体还处于初期开发阶段，未来我们会提供这种安装方式。
+
 <h2 align="center">Usage Examples</h2>
 <h3>1. 数据清洗 (Data cleaning)</h3>
 
@@ -85,5 +95,5 @@ print(takin.delete_extra_whitespace(takin.delete_series_number(test8)))
 - [ ] 摘要生成
 - [ ] 事件抽取
 
-<b>目前Takin整体还处理初期开发阶段，才疏学浅，若有错误和不当之处，请批评与指正！</b>
+<b>目前Takin整体还处于初期开发阶段，才疏学浅，若有错误和不当之处，请批评与指正！</b>
 Email: yymmjing@gmail.com
