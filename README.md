@@ -40,20 +40,22 @@ pip install takin
 import takin
 
 # 删除多余的空格
-test4 = "I lovw        python   d     "
-print(takin.delete_extra_whitespace(test4))
-
-# 删除数字
-test5 = "jjj 555 5  555   jkdn33 78 0 6 7"
-print(takin.delete_digit(test5)) 
+>>> en_text_1 = "I      love  python!"
+>>> zh_text_1 = "今天    天气  颇为   凉爽  呀 ！"
+>>> print(takin.delete_extra_whitespace(en_text_1, lang="en"))
+>>> print(takin.delete_extra_whitespace(zh_text_1, lang="zh"))
+I love python!
+今天天气颇为凉爽呀！
 
 # 删除括号及括号里的内容
-test7 = "dd<dd>d[e]dd【33445可爱】dd{众多}（就就很尴尬）jjj(尅啊)"
-print(takin.delete_bracket(test7))
+>>> text_2 = "我们(很高兴)，他们【很快乐】，大家{都很不错哦 }，所以（今天）一起去玩吧"
+>>> print(takin.delete_bracket(text_2))
+我们，他们，大家，所以一起去玩吧
 
 # 删除序号
-test8 = "1. 亨 2.hhjsidh (66).jasckjs   2.34    (9999).周驰你上课 1).2)."
-print(takin.delete_extra_whitespace(takin.delete_series_number(test8)))
+>>> test_3 = "1. 内存 25.Main board (66).磁盘(9999).显卡 1).M集群2).显示器"
+>>> print(takin.delete_series_number(test_3))
+ 内存 Main board 磁盘显卡 M集群显示器
 ```
 
 # To-do list
