@@ -17,6 +17,12 @@
 <h2 align="center">Installation</h2>
 <h3>1. 直接使用源码 (推荐方式)</h3>
 
+```bash
+git clone https://github.com/sharejing/takin.git
+cd takin
+sh setup.sh
+```
+
 > ☝️我们推荐直接使用源码来安装Takin，即<b>将stopwords和takin文件夹放入您的project下即可</b>。之所以推荐这种方式的目的是：不同数据一般预处理方式存在差异，直接使用源码可以帮助您根据您的实际情况来修改Takin中的函数，以达到自己的预处理结果。另外，如果您的函数具有很强的代表性，也请您可以pull request，便于大家查阅、使用。
 
 <h3>2. 通过pip安装</h3>
