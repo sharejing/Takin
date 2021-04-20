@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 '''
-@File   :   data_aumentation.py
+@File   :   data_augmentation.py
 @Time   :   2021/04/19 16:19:12
 @Author :   Jun Quan, Qian Cao
 @Email  :   terryqj0107@gmail.com, caoqian0905@gmail.com
