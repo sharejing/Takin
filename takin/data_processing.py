@@ -23,7 +23,7 @@ def tokenize(text: str, lang="en", with_pos=False, drop_stopwords=False) -> list
     停用词表从文件中加载，也可自行上传
     """
     if drop_stopwords:
-        with open("stopwords/stopwords.txt", "r", encoding="utf-8") as f:
+        with open("resources/stopwords.txt", "r", encoding="utf-8") as f:
             stopwords = [line.strip() for line in f]
     else:
         stopwords = []
