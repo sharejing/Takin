@@ -100,7 +100,7 @@ def delete_series_number(text: str) -> str:
     Delete all series numbers in text.
     Including *.、(*).、*).
     """
-    text = re.sub(r"\d+\.[^\d+]", "", text)
+    text = re.sub(r"\d+\.", "", text)
     text = re.sub(r"\d+\。", "", text)
     text = re.sub(r"\(\d+\).", "", text)
     text = re.sub(r"\d+\).", "", text)
