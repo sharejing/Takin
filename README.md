@@ -31,7 +31,7 @@ sh setup.sh
 pip install takin
 ```
 
-> 目前Takin整体还处于初期开发阶段，未来我们会提供这种安装方式。
+> 😢目前Takin整体还处于初期开发阶段，未来我们会提供这种安装方式。
 
 <h2 align="center">Usage Examples</h2>
 <h3>1. 数据清洗 (Data cleaning)</h3>
