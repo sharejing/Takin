@@ -34,7 +34,7 @@ pip install takin
 > 😢目前Takin整体还处于初期开发阶段，未来我们会提供这种安装方式。
 
 <h2 align="center">Usage Examples</h2>
-<h3>1. 数据清洗 (Data cleaning)</h3>
+<h3>1. 数据清洗 (Data Cleaning)</h3>
 
 ```python
 import takin
@@ -56,6 +56,30 @@ I love python!
 >>> test_3 = "1. 内存 25.Main board (66).磁盘(9999).显卡 1).M集群2).显示器"
 >>> print(takin.delete_series_number(test_3))
  内存 Main board 磁盘显卡 M集群显示器
+```
+
+<h3>2. 数据处理 (Data Processing)</h3>
+
+```python
+import takin
+
+# 分词与词性标注
+>>> zh_test4 = "昨天天气不错，大家都很开心啊，我的马儿在哪里啊!美丽的花儿"
+>>> en_test4 = "Today is sunday, everyone is very happy!"
+>>> print(takin.tokenize(zh_test4, lang="zh", with_pos=True, drop_stopwords=True))
+>>> print(takin.tokenize(en_test4, lang="en", with_pos=False, drop_stopwords=False))
+[('昨天', 't'), ('天气', 'n'), ('不错', 'a'), ('开心', 'v'), ('马儿', 'nr'), ('美丽', 'ns'), ('花儿', 'n')]
+['Today', 'is', 'sunday', ',', 'everyone', 'is', 'very', 'happy', '!']
+
+# 数据集划分
+>>> corpus = ["A"] * 766
+>>> train_dataset, dev_test, test_dataset = takin.split_dataset(corpus, ratio="7:2:1")
+>>> print(len(train_dataset))
+>>> print(len(dev_test))
+>>> print(len(test_dataset))
+537
+154
+75
 ```
 
 # To-do list
