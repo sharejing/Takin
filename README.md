@@ -100,7 +100,6 @@ import takin
 # To-do list
 ### 文本解析 (Text Parsing)
 - [ ] 从html、pdf、word、msg、ppt、excel中提取文本
-- [ ] 删除所有该格式的专属标签 (如删除html文本中的html标签)
 
 ### 数据清洗 (Data Cleaning)
 - 转化类
@@ -133,8 +132,8 @@ import takin
 - [ ] 字数统计/句数统计/段数统计
 
 ### 数据增强 (Data Augmentation)
-- [ ] 近义词替换
-- [ ] 随机删除、交换单词
+- [x] 近义词替换
+- [x] 随机删除、交换单词
 - [ ] 释义生成
 
 ### 简单任务
