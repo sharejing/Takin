@@ -10,3 +10,7 @@ pip install tqdm
 pip install synonyms
 # 安装nltk
 pip install nltk
+# 安装各种格式文件处理包
+pip install docx
+pip install python-pptx
+pip install pdfminer3k
