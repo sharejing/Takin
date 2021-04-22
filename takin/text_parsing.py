@@ -4,12 +4,8 @@
 @Time   :   2021/04/20 17:00:00
 @Author :   Jiazuo Qiu
 @Email  :   450388261@qq.com
-@Desc   :   各种格式的文件读取函数集 (txt/docx/ppt/pdf html/msg/excel)
+@Desc   :   各种格式的文件读取函数集 (txt/docx/ppt/pdf/html)
 '''
-
-# pip install docx
-# pip install python-pptx
-# pip install pdfminer3k
 
 import docx
 from bs4 import BeautifulSoup
@@ -96,3 +92,20 @@ def read_pdf(in_path):
     data = [d for d in data if len(d) != 0]
 
     return data
+
+
+########################################################################
+# 读取html文件
+########################################################################
+def read_html(in_path):
+    data = []
+
+    f = open(in_path, 'r')
+    soup = BeautifulSoup(f.read(), 'html.parser')
+    data = soup.get_text()
+    data = data.split()
+
+    data = [d for d in data if len(d) != 0]
+
+    return data
+
