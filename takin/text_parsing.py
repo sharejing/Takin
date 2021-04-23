@@ -2,19 +2,22 @@
 '''
 @File   :   text_parsing.py
 @Time   :   2021/04/20 17:00:00
-@Author :   Jiazuo Qiu
+@Author :   qjzhzw
 @Email  :   450388261@qq.com
-@Desc   :   各种格式的文件读取函数集 (txt/docx/pptx/pdf/html)
+@Desc   :   各种格式的文件读取函数集 (txt/docx/pptx/pdf/html/eml)
 '''
 
+import re
 import docx
-from bs4 import BeautifulSoup
+import email
 from pptx import Presentation
 from pptx.util import Cm, Pt
 from pdfminer.converter import PDFPageAggregator
 from pdfminer.layout import LAParams
 from pdfminer.pdfparser import PDFParser, PDFDocument
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from bs4 import BeautifulSoup
+
 
 ########################################################################
 # 读取txt文件
@@ -22,12 +25,12 @@ from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 def read_txt(in_path):
     data = []
 
-    f = open(in_path, 'r')
+    f = open(in_path, 'r', encoding='utf-8')
     for para in f:
         text = para.strip()
-        if len(text) == 0:
-            continue
         data.append(text)
+
+    data = [d.strip() for d in data if len(d.strip()) != 0]
     
     return data
 
@@ -43,7 +46,7 @@ def read_docx(in_path):
         text = para.text.strip()
         data.append(text)
 
-    data = [d for d in data if len(d) != 0]
+    data = [d.strip() for d in data if len(d.strip()) != 0]
 
     return data
 
@@ -62,7 +65,7 @@ def read_pptx(in_path):
                 for paragraph in text_frame.paragraphs:
                     data.append(paragraph.text)
 
-    data = [d for d in data if len(d) != 0]
+    data = [d.strip() for d in data if len(d.strip()) != 0]
 
     return data
 
@@ -89,7 +92,7 @@ def read_pdf(in_path):
         for out in layout:
             data = out.get_text().split('\n')
     
-    data = [d for d in data if len(d) != 0]
+    data = [d.strip() for d in data if len(d.strip()) != 0]
 
     return data
 
@@ -100,12 +103,30 @@ def read_pdf(in_path):
 def read_html(in_path):
     data = []
 
-    f = open(in_path, 'r')
+    f = open(in_path, 'r', encoding='gbk')
     soup = BeautifulSoup(f.read(), 'html.parser')
     data = soup.get_text()
-    data = data.split()
+    data = data.split('\n')
 
-    data = [d for d in data if len(d) != 0]
+    data = [d.strip() for d in data if len(d.strip()) != 0 and \
+            not re.search(r'p.p1', d) and \
+            not re.search(r'span.s1', d) and \
+            not re.search(r'span.s2', d)]
+
+    return data
+
+
+########################################################################
+# 读取eml文件
+########################################################################
+def read_eml(in_path):
+    data = []
+
+    f = open(in_path, 'r', encoding='utf-8')
+    msg = email.message_from_file(f)
+    data = str(msg).split('\n')
+
+    data = [d.strip() for d in data if len(d.strip()) != 0]
 
     return data
 
