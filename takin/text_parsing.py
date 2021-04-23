@@ -2,7 +2,7 @@
 '''
 @File   :   text_parsing.py
 @Time   :   2021/04/20 17:00:00
-@Author :   qjzhzw
+@Author :   Jiazuo Qiu
 @Email  :   450388261@qq.com
 @Desc   :   各种格式的文件读取函数集 (txt/docx/pptx/pdf/html)
 '''
