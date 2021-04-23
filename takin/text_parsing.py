@@ -2,9 +2,9 @@
 '''
 @File   :   text_parsing.py
 @Time   :   2021/04/20 17:00:00
-@Author :   Jiazuo Qiu
+@Author :   qjzhzw
 @Email  :   450388261@qq.com
-@Desc   :   各种格式的文件读取函数集 (txt/docx/ppt/pdf/html)
+@Desc   :   各种格式的文件读取函数集 (txt/docx/pptx/pdf/html)
 '''
 
 import docx
@@ -49,9 +49,9 @@ def read_docx(in_path):
 
 
 ########################################################################
-# 读取ppt文件
+# 读取pptx文件
 ########################################################################
-def read_ppt(in_path):
+def read_pptx(in_path):
     data = []
 
     prs = Presentation(in_path)
