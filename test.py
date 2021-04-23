@@ -67,3 +67,10 @@ print(takin.random_insertion(case1_words, n, lang="zh"))  # 随机插入
 print(takin.random_swap(case1_words, n))  # 随机交换
 print(takin.random_deletion(case1_words, 0.3))  # 随机删除
 print(takin.drop_stopwords(case1_words))  # 随机删除
+
+# 读取各种格式的文件
+print(takin.read_txt('resources/test.txt'))
+print(takin.read_docx('resources/test.docx'))
+print(takin.read_pptx('resources/test.pptx'))
+print(takin.read_pdf('resources/test.pdf'))
+print(takin.read_html('resources/test.html'))
