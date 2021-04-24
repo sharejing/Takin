@@ -99,7 +99,7 @@ import takin
 
 # To-do list
 ### 文本解析 (Text Parsing)
-- [ ] 从html、pdf、word、msg、ppt、excel中提取文本
+- [x] 从txt/docx/pptx/pdf/html/eml中提取文本
 
 ### 数据清洗 (Data Cleaning)
 - 转化类
