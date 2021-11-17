@@ -18,7 +18,7 @@
 pip install takin
 ```
 
-> :smiley:具体的API使用请查阅Takin的开发者文档(在上面的仓库中)：The_guideline_of_Takin.pdf :point_up:
+> 具体的API使用请查阅Takin的开发者文档：[The_guideline_of_Takin.pdf](https://github.com/sharejing/Takin/blob/main/The_guideline_of_Takin.pdf) :point_up:
 
 <h3>:sunny: Plan</h3>
 
