@@ -1,0 +1,42 @@
+# -*- encoding: utf-8 -*-
+'''
+@File    :   setup.py
+@Time    :   2021/11/17 18:13:17
+@Author  :   Sharejing
+@Contact :   yymmjing@gmail.com
+@Desc    :   
+'''
+
+from setuptools import setup
+
+
+setup(
+    name="takin",
+    version="1.0.1",
+    author="Yimin Jing",
+    author_email="yymmjing@gmail.com",
+    description="A Python Toolkit for File Parsing, Text Cleaning and Data Splitting",
+    long_description=open("README.md").read(),
+    license="MIT",
+    url="https://github.com/sharejing/Takin",
+    packages=["takin"],
+    keywords="NLP text cleaning file parsing data splitting",
+    python_requires=">=3.6.0",
+    install_requires=[
+        "beautifulsoup4==4.10.0",
+        "python-docx==0.8.11",
+        "python-pptx==0.6.21",
+        "pdfminer3k==1.3.4"
+        ],
+    classifiers=[
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Topic :: Scientific/Engineering",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+    ],
+)
