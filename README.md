@@ -12,15 +12,15 @@
 * 数据划分：快速划分训练集、验证集和测试集。
 
 <h2 align="center">Installation&Usage&Plan</h2>
-<h3>Installation&Usage</h3>
+<h3>:sunny: Installation&Usage</h3>
 
 ```bash
 pip install takin
 ```
 
-> :smiley:具体的API使用请查阅Takin的开发者文档(在上面的仓库中)：The_guideline_of_Takin.pdf :rocket:
+> :smiley:具体的API使用请查阅Takin的开发者文档(在上面的仓库中)：The_guideline_of_Takin.pdf :point_up:
 
-<h3>Plan</h3>
+<h3>:sunny: Plan</h3>
 
 ### 文件解析 (File Parsing)
 - [x] 从txt/docx/pptx/pdf/html/eml中提取文本
