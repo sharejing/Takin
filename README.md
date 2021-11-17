@@ -21,6 +21,7 @@ pip install takin
 > :smiley:具体的API使用请查阅Takin的开发者文档(在上面的仓库中)：The_guideline_of_Takin.pdf :rocket:
 
 <h3>Plan</h3>
+
 ### 文件解析 (File Parsing)
 - [x] 从txt/docx/pptx/pdf/html/eml中提取文本
 
