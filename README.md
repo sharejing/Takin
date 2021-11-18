@@ -20,6 +20,32 @@ pip install takin
 
 > 具体的API使用请查阅Takin的开发者文档：[The_guideline_of_Takin.pdf](https://github.com/sharejing/Takin/blob/main/The_guideline_of_Takin.pdf) :point_up:
 
+```python
+import takin
+
+>>> print(takin.delete_escape_character("Today is sunday.\nwe are \thappy.", lang="en"))
+>>> print(takin.delete_extra_whitespace("我 们  都非   常快 乐   。 ", lang="zh"))
+>>> print(takin.delete_extra_whitespace("Takin  ,    is very   useful  .    ", lang="en"))
+>>> print(takin.delete_digit("今天6天777气7908762345不错！"))
+>>> print(takin.delete_punctuation("Long;:,.\"??!''·！？；，。：“”、‘’《》[╔ˊ〉〈–η●®·•-~#/*&$|★▶><\^@+[=]()（）{%_}?…]"))
+>>> print(takin.delete_letter("明天将会是一个beautiful晴朗的天气"))
+>>> print(takin.delete_chinese("This is another 胜利victory!"))
+>>> print(takin.delete_bracket("机器阅读理解（MRC），【旨在】教机器理解人类语言(language){热爱学习}[hah]"))
+>>> print(takin.delete_series_number("1.努力工作；(2).用心学习；(3)锻炼身体；4).热爱家庭 5。快乐；6)学习, 7)、（一）、集中学习 （十五）高度集中 （一百二十三）"))
+>>> print(takin.delete_repeated_punc("what's up????????????????...。。《《《"))
+
+Today is sunday. we are happy.
+我们都非常快乐。
+Takin, is very useful.
+今天天气不错！
+Long
+明天将会是一个晴朗的天气
+This is another victory!
+机器阅读理解，教机器理解人类语言
+努力工作；用心学习；锻炼身体；热爱家庭 快乐；学习, 集中学习 高度集中
+what's up?.。《
+```
+
 <h3>:sunny: Plan</h3>
 
 ### 文件解析 (File Parsing)
