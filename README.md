@@ -1,6 +1,6 @@
 <div align="center"><img src="https://github.com/sharejing/Takin/blob/main/images/takin_logo.PNG" height="150px"/></div>
 
-<h2 align="center">Takin: A Python Toolkit for File Processing, Text Cleaning and Data Splitting</h2>
+<h2 align="center">A Python Toolkit for File Processing, Text Cleaning and Data Splitting</h2>
 
 实验室数据大多由人工众包构建而成，其格式规范，内容干净，数据经过一些简单清洗便能用于模型训练；而真实环境下的数据往往来自于一些用户日志、员工记录等，其文件格式众多，数据内容包含大量噪声，想要获得内容干净、格式规范统一的数据，就需要对这些数据进行深度清洗。Takin就是一款用于真实环境下文件处理、文本清洗和数据划分的开源工具。通过对外提供函数接口的方式，帮助使用者快速获取模型的输入数据。
 
