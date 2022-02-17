@@ -29,7 +29,7 @@ pip install takin
 - [x] 加载给定目录里的所有纯文本文件 [load_multi_txt](../../wiki/File-Processing#load_multi_txt)
 - [x] 将python列表数据写入纯文本文件 [write_txt](../../wiki/File-Processing#write_txt)
 - [x] 加载yaml参数配置文件 [load_yaml](../../wiki/File-Processing#load_yaml)
-- [x] 将数据写入excel文件 [write_excel] (../../wiki/File-Processing#write_excel)
+- [x] 将数据写入excel文件 [write_excel](../../wiki/File-Processing#write_excel)
 
 ### 文本清洗 (Text Cleaning)
 - [x] 删除文本中的转移字符 delete_escape_character
