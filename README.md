@@ -21,7 +21,7 @@ pip install takin
 <h3>:sunny: Plan&Usage</h3>
 
 ### 文件处理 (File Processing)
-- [x] 加载Json文件，整个Json文件是一个python字典 load_single_json
+- [x] 加载Json文件，整个Json文件是一个python字典 [load_single_json](../../wiki/File-Processing#load_single_json)
 - [x] 加载Json文件，一行是一个python字典 load_multi_json
 - [x] 将python字典或字典列表写入Json文件 write_json
 - [x] 输出给定目录里的所有指定文件类型的绝对路径 output_filenames
