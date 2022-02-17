@@ -22,9 +22,9 @@ pip install takin
 
 ### 文件处理 (File Processing)
 - [x] 加载Json文件，整个Json文件是一个python字典 [load_single_json](../../wiki/File-Processing#load_single_json)
-- [x] 加载Json文件，一行是一个python字典 load_multi_json
-- [x] 将python字典或字典列表写入Json文件 write_json
-- [x] 输出给定目录里的所有指定文件类型的绝对路径 output_filenames
+- [x] 加载Json文件，一行是一个python字典 [load_multi_json](../../wiki/File-Processing#load_multi_json)
+- [x] 将python字典或字典列表写入Json文件 [write_json](../../wiki/File-Processing#write_json)
+- [x] 输出给定目录里的所有指定文件类型的绝对路径 [output_filenames](../../wiki/File-Processing#output_filenames)
 - [x] 加载单个纯文本文件 load_single_txt
 - [x] 加载给定目录里的所有纯文本文件 load_multi_txt
 - [x] 将python列表数据写入纯文本文件 write_txt
