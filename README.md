@@ -32,19 +32,19 @@ pip install takin
 - [x] 将数据写入excel文件 [write_excel](../../wiki/File-Processing#write_excel)
 
 ### 文本清洗 (Text Cleaning)
-- [x] 删除文本中的转移字符 delete_escape_character
-- [x] 删除文本中的多余空白 delete_extra_whitespace
-- [x] 删除文本中的数字 delete_digit
-- [x] 删除文本中的所有标点符号(包括特殊符号) delete_punctuation
-- [x] 删除英文字母 delete_letter
-- [x] 删除汉字 delete_chinese
-- [x] 删除括号以及括号里的内容 delete_bracket
-- [x] 删除文本中的序号 delete_series_number
-- [x] 连续重复的标点符号只保留一次 delete_repeated_punc
+- [x] 删除文本中的转移字符 [delete_escape_character](../../wiki/Text-Cleaning#delete_escape_character)
+- [x] 删除文本中的多余空白 [delete_extra_whitespace](../../wiki/Text-Cleaning#delete_extra_whitespace)
+- [x] 删除文本中的数字 (百分数、分数、小数、整数) [delete_digit](../../wiki/Text-Cleaning#delete_digit)
+- [x] 删除文本中的所有标点符号(保留运算符) [delete_punctuation](../../wiki/Text-Cleaning#delete_punctuation)
+- [x] 删除英文字母 [delete_letter](../../wiki/Text-Cleaning#delete_letter)
+- [x] 删除汉字 [delete_chinese](../../wiki/Text-Cleaning#delete_chinese)
+- [x] 删除括号以及括号里的内容 [delete_bracket](../../wiki/Text-Cleaning#delete_bracket)
+- [x] 删除文本中的序号 [delete_series_number](../../wiki/Text-Cleaning#delete_series_number)
+- [x] 连续重复的标点符号只保留一次 [delete_repeated_punc](../../wiki/Text-Cleaning#delete_repeated_punc)
 
 ### 数据划分 (Data Splitting)
-- [x] 给定一个原始数据集，按照比例将其划分为训练集、验证集、测试集 split_dataset
-- [x] corpus中每个元素是dict，按照类别进行数据切分 split_dataset_by_class
+- [x] 给定一个原始数据集，按照比例将其划分为训练集、验证集、测试集 [split_dataset](../../wiki/Data-Splitting#split_dataset)
+- [x] corpus中每个元素是dict，按照类别进行数据切分 [split_dataset_by_class](wiki/Data-Splitting#split_dataset_by_class)
 
 <b>目前Takin仍处于开发阶段，才疏学浅，若有错误和不当之处，请批评与指正！</b>
 
