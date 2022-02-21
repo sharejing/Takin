@@ -44,7 +44,7 @@ pip install takin
 
 ### 数据划分 (Data Splitting)
 - [x] 给定一个原始数据集，按照比例将其划分为训练集、验证集、测试集 [split_dataset](../../wiki/Data-Splitting#split_dataset)
-- [x] corpus中每个元素是dict，按照类别进行数据切分 [split_dataset_by_class](wiki/Data-Splitting#split_dataset_by_class)
+- [x] corpus中每个元素是dict，按照类别进行数据切分 [split_dataset_by_class](../../wiki/Data-Splitting#split_dataset_by_class)
 
 <b>目前Takin仍处于开发阶段，才疏学浅，若有错误和不当之处，请批评与指正！</b>
 
