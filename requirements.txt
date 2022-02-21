@@ -1,4 +1,2 @@
-python-docx
-python-pptx
-pdfminer3k
-beautifulsoup4
+pyyaml
+pandas

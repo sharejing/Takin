@@ -12,37 +12,45 @@ from string import punctuation
 from itertools import groupby
 
 
-def delete_escape_character(text, lang="zh"):
+def delete_escape_character(text, lang="zh", add_punc=False):
     """
-    删除文本中的转移字符
+    @Desc: 删除文本中的转移字符
+    @Args: 
+        text: 指定文本
+        lang: 该文本对应的语言
+        add_punc: 是否补全标点符号
+    @Returns: 
+        删除后的文本
     """
     list_text = list(text)
-    for index, ele in enumerate(list_text):
-        if ele in ["\t", "\v", "\f", "\r"]:
-            list_text[index] = ""
-        if lang == "zh":
-            if ele == "\n" and list_text[index-1] != "。":
-                list_text[index] = "。"
-            if ele == "\n" and list_text[index-1] == "。":
-                list_text[index] = ""
-        else:
-            if ele == "\n" and list_text[index-1] != ".":
-                list_text[index] = ". "
-            if ele == "\n" and list_text[index-1] == ".":
-                list_text[index] = " "
+    for idx, char in enumerate(list_text):
+        if char in ["\t", "\v", "\f", "\r", "\n"]:
+            list_text[idx] = ""
+            if add_punc:
+                if lang == "zh":
+                    if list_text[idx-1] != "。":
+                        list_text[idx] = "。"
+                else:
+                    if list_text[idx-1] != ".":
+                        list_text[idx] = ". "
     return "".join(list_text)
 
 
 def delete_extra_whitespace(text, lang="zh"):
     """
-    删除文本中的多余空白
+    @Desc: 删除文本中的多余空白
+    @Args:
+        text: 指定文本
+        lang: 该文本对应的语言
+    @Returns:
+        删除后的文本
     """
     if lang == "zh":
         return "".join(text.split())
     else:
         list_text = list(" ".join(text.split()))
         for index, ele in enumerate(list_text):
-            if index!= 0 and ele in punctuation:
+            if index != 0 and ele in punctuation:
                 if list_text[index-1] == " ":
                     list_text[index-1] = ""
         return "".join(list_text)
@@ -50,62 +58,91 @@ def delete_extra_whitespace(text, lang="zh"):
 
 def delete_digit(text):
     """
-    删除文本中的数字
+    @Desc: 删除文本中的数字 (百分数、分数、小数、整数)
+    @Args:
+        text: 指定文本
+    @Returns:
+        删除后的文本
     """
-    return re.sub(r"[0-9]", "", text)
+    # 百分数、分数、小数、整数
+    DIGIT_PATTERN = r"\d+\.?\d+?%(?#百分数)|\d/\d+(?#分数)|-?\d+\.?\d+(?#小数和整数)"
+    return re.sub(DIGIT_PATTERN, "", text)
 
 
 def delete_punctuation(text):
     """
-    删除文本中的所有标点符号
+    @Desc: 删除文本中的所有标点符号 (运算符保留)
+    @Args: None
+    @Returns: None
     """
-    return re.sub(r"[;:,.\"?!'·！？；，。：“”、‘’《》\[\╔\ˊ\〉\〈\–\η\●\®\·\•\-\~#/*&$|★▶><\\^@+[=\]()（）{%_}?…]+]", "", text)
+    CHINESE_PUNC = r"(，|。|、|？|！|“|”|‘|’|；|：|《|》|￥|（|）|〈|〉|·)"
+    ENGLISH_PUNC = r"(,|!|\?|'|\"|…|-|\$|@|\[|\]|{|}|_|\^|#|<|>|\(|\)|&|\\|;|:)"
+    SPECIAL_PUNC = r"(╔|ˊ|η|●|®|•|~|★|\||▶|–)"
+    OPERATION_PATTERN = r"(?<!\d)(\.|\+|\=|\*|/|%)(?!\d)"
+
+    text = re.sub(CHINESE_PUNC, "", text)
+    text = re.sub(ENGLISH_PUNC, "", text)
+    text = re.sub(SPECIAL_PUNC, "", text)
+    text = re.sub(OPERATION_PATTERN, "", text)
+    return text
 
 
 def delete_letter(text):
     """
-    删除所有英文字母
+    @Desc: 删除所有英文字母
+    @Args:
+        text: 指定文本
+    @Returns:
+        删除后的文本
     """
-    return re.sub(r"[A-Za-z]", "", text)
+    LETTER_PATTERN = r"[A-Za-z]+"
+    return re.sub(LETTER_PATTERN, "", text)
 
 
 def delete_chinese(text):
     """
-    删除所有中文字符
+    @Desc: 删除所有中文字符
+    @Args:
+        text: 指定文本
+    @Returns:
+        删除后的文本
     """
-    return re.sub(r"[\u4e00-\u9fa5]", "", text)
+    CHINESE_PATTERN = r"[\u4e00-\u9fa5]+"
+    return re.sub(CHINESE_PATTERN, "", text)
 
 
 def delete_bracket(text):
     """
-    删除括号以及括号里的内容，包括 <*>、(*)、（*）、【*】、[*]、{*}
+    @Desc: 删除括号以及括号里的内容，包括 <*>、(*)、（*）、【*】、[*]、{*}
+    @Args:
+        text: 指定文本
+    @Returns:
+        删除后的文本
     """
-    text = re.sub(r"<[^<>]*>", "", text)
-    text = re.sub(r"\([^()]*\)", "", text)
-    text = re.sub(r"\（[^（）]*\）", "", text)
-    text = re.sub(r"\【[^【】]*\】", "", text)
-    text = re.sub(r"\[[^\[\]]*\]", "", text)
-    text = re.sub(r"\{[^{}]*\}", "", text)
-    return text
+    BRACKET_PATTERN = r"<.*>|\(.*\)|（.*）|【.*】|\[.*\]|{.*}"
+    return re.sub(BRACKET_PATTERN, "", text)
 
 
 def delete_series_number(text):
     """
-    删除文本中的序号
-    """
-    text = re.sub(r"\d+\.", "", text)
-    text = re.sub(r"\d+\。", "", text)
-    text = re.sub(r"\(\d+\)[.]?", "", text)
-    text = re.sub(r"\（[一|二|三|四|五|六|七|八|九|十|百|千|万|亿]+\）[、]?", "", text)
-    text = re.sub(r"\d+\)[.]", "", text)
-    text = re.sub(r"\d+\)[、]", "", text)
-    text = re.sub(r"\d+\)", "", text)
-    return text
+    @Desc: 删除文本中的序号
+    @Args:
+        text: 指定文本
+    @Returns:
+        删除后的文本
+    """ 
+    # 1.|(2)|(2).|4)|4)、|（一）|（二）、 
+    SERIES_PATTERN = r"\d+\.|\(\d+\)\.?|\d+\)(\.|、)?|（(一|二|三|四|五|六|七|八|九|十|百|千|万|亿)+）(\.|、)?"
+    return re.sub(SERIES_PATTERN, "", text)
 
 
 def delete_repeated_punc(text):
     """
-    连续重复的标点符号只保留一次
+    @Desc: 连续重复的标点符号只保留一次
+    @Args:
+        text: 指定文本
+    @Returns:
+        删除后的文本
     """
     punctuations = [';', ':', ',', '.', '"', '?', '!', "'", '·', '！', '？', '；', '，', '。', '：', '“', '”', '、', '‘', '’', '《', '》', '[', '╔', 'ˊ', '〉', '〈', '–', 'η', '●', '®', '·', '•', '-', '~', '#', '/', '*', '&', '$', '|', '★', '▶', '>', '<', '\\', '^', '@', '+', '[', '=', ']', '(', ')', '（', '）', '{', '%', '_', '}', '?', '…']
     t = [[k, len(list(g))] for k, g in groupby(text)]

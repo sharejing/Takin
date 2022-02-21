@@ -1,0 +1,7 @@
+{
+    "data":{
+        "name": "takin",
+        "email": "jingym3@lenovo.com",
+        "school": [1, 2, 3]
+    }
+}
