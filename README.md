@@ -17,7 +17,7 @@
 ```bash
 pip install takin
 ```
-> 最近的船新版本为takin==1.1.0
+> 最近的船新版本为takin==1.1.2
 
 <h3>:sunny: Plan&Usage</h3>
 

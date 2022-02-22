@@ -9,14 +9,10 @@
 
 from setuptools import setup
 
-"""
-最新版本1.1.0
-"""
-
 
 setup(
     name="takin",
-    version="1.1.0",
+    version="1.1.2",
     author="Yimin Jing",
     author_email="yymmjing@gmail.com",
     description="A Python Toolkit for File Processing, Text Cleaning and Data Splitting",
@@ -29,8 +25,8 @@ setup(
     install_requires=[
         "pyyaml==6.0",
         "pandas==1.3.4",
-        "openpyxl==3.0.9"
-        ],
+        "openpyxl==3.0.9",
+    ],
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
