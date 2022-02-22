@@ -12,6 +12,7 @@ import json
 import glob
 import yaml
 import pandas as pd
+from openpyxl import Workbook, load_workbook
 
     
 def load_single_json(in_path, prefix=None):
@@ -140,16 +141,25 @@ def load_yaml(in_path):
     return data
 
 
-def write_excel(data, out_path):
+def write_excel(data, out_path, sheet_name="Sheet"):
 
     """
     @Desc: 将数据写入excel文件
     @Args: 
         data: {"列名1":[ele1, ele2], "列名2": [ele1, ele2]}
         out_path: *.xlsx
+        sheet_name: 表单名
     @Returns: 
         excel文件
     """
+    if os.path.exists(out_path):
+        book = load_workbook(out_path)
+        writer = pd.ExcelWriter(out_path, engine="openpyxl", mode="a")
+        writer.book = book
+    else:
+        book = Workbook()
+        writer = pd.ExcelWriter(out_path, engine="openpyxl", mode="w")
     df = pd.DataFrame(data)
-    df.to_excel(out_path, index=False)
-
+    df.to_excel(writer, sheet_name=sheet_name, index=False)
+    writer.save()
+    

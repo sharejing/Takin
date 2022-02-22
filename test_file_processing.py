@@ -34,5 +34,12 @@ import takin
 # config = takin.load_yaml("files/config.yaml")
 # print(config)
 
+
 # data = {"name": ["张三", "李四"], "age": [13, 14], "school": ["苏州市第一幼儿园", "北京市第三幼儿园"]}
 # takin.write_excel(data, "files/wrote_excel.xlsx")
+
+# ddata = {"name": ["张三", "李四", "王五"], "age": [13, 14, 17], "school": ["苏州市第一幼儿园", "北京市第三幼儿园", "123456789"]}
+# takin.write_excel(ddata, "files/wrote_excel.xlsx", sheet_name="student")
+
+# sata = {"aaaa": ["张三", "李四", "王五"], "bbb": [13, 14, 17], "cccc": ["苏州市第一幼儿园", "北京市第三幼儿园", "123456789"]}
+# takin.write_excel(sata, "files/wrote_excel.xlsx", sheet_name="woman")
