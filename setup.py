@@ -23,8 +23,8 @@ setup(
     keywords="NLP text cleaning file processing data splitting",
     python_requires=">=3.6.0",
     install_requires=[
-        "pyyaml==6.0"
-        "pandas==1.3.4"
+        "pyyaml==6.0",
+        "pandas==1.3.4",
         "openpyxl==3.0.9"
         ],
     classifiers=[
