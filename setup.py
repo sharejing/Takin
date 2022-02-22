@@ -9,6 +9,10 @@
 
 from setuptools import setup
 
+"""
+最新版本1.1.0
+"""
+
 
 setup(
     name="takin",
