@@ -13,7 +13,14 @@ import math
 
 def split_dataset(corpus: list, ratio: str, is_shuffle=True) -> list:
     """
-    给定一个原始数据集，按照比例将其划分为训练集、验证集、测试集
+    @Desc: 给定一个原始数据集，按照比例将其划分为训练集、验证集、测试集
+    @Args:
+        corpus: 给定数据集，python列表
+        ratio: 数据集划分比例，7:2:1或者6:4等
+        is_shuffle: 是否打乱数据集，默认True
+    @Returns:
+        若是7:2:1等三个比例，则返回训练集、验证集和测试集
+        若是6:4等两个比例，则返回训练集和测试集
     """
     if is_shuffle:
         random.shuffle(corpus)
@@ -38,7 +45,15 @@ def split_dataset(corpus: list, ratio: str, is_shuffle=True) -> list:
 
 def split_dataset_by_class(corpus: list, ratio: str, cate="category", is_shuffle=True) -> list:
     """
-    corpus中每个元素是dict，按照类别进行数据切分
+    @Desc: corpus中每个元素是dict，按照类别进行数据切分
+    @Args:
+        corpus: 给定数据集，python列表，列表中每一个元素是dict
+        ratio: 数据集划分比例，7:2:1或者6:4等
+        cate: 按dict的哪个字段来划分数据集
+        is_shuffle: 是否打乱数据集，默认True
+    @Returns:
+        若是7:2:1等三个比例，则返回训练集、验证集和测试集
+        若是6:4等两个比例，则返回训练集和测试集
     """
     _ratio = [int(ele) for ele in ratio.split(":")]
     assert sum(_ratio) == 10, "ratio必须按10来划分，7:2:1或者6:4"
