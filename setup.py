@@ -12,7 +12,7 @@ from setuptools import setup
 
 setup(
     name="takin",
-    version="1.1.3",
+    version="1.1.4",
     author="Yimin Jing",
     author_email="yymmjing@gmail.com",
     description="A Python Toolkit for File Processing, Text Cleaning and Data Splitting",
@@ -22,9 +22,9 @@ setup(
     keywords="NLP text cleaning file processing data splitting",
     python_requires=">=3.6.0",
     install_requires=[
-        "pyyaml==6.0",
-        "pandas==1.3.4",
-        "openpyxl==3.0.9",
+        "pyyaml",
+        "pandas",
+        "openpyxl",
     ],
     classifiers=[
         "Development Status :: 3 - Alpha",
