@@ -12,11 +12,10 @@ from setuptools import setup
 
 setup(
     name="takin",
-    version="1.1.2",
+    version="1.1.3",
     author="Yimin Jing",
     author_email="yymmjing@gmail.com",
     description="A Python Toolkit for File Processing, Text Cleaning and Data Splitting",
-    long_description=open("README.md").read(),
     license="MIT",
     url="https://github.com/sharejing/Takin",
     packages=["takin"],
